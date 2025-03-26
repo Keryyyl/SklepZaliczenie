@@ -1,4 +1,5 @@
 import Header from "./components/Header"
+import KursCard from "./components/KursCard"
 
 function Koszyk() {
 
@@ -6,6 +7,7 @@ function Koszyk() {
       <>
       <Header/>
       Koszyk
+      {/* <KursCard title="Tytułek" description="Jakiś opis" price="20" /> */}
       </>
     )
   }

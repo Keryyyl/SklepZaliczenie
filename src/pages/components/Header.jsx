@@ -29,7 +29,7 @@ function Header() {
             <div className="flex w-full justify-between p-4">
                 <Link to="/" className="text-3xl ml-5 dark:text-white btn btn-ghost hover:text-base-content text-black transition duration-500">Kursiory</Link>
                 <div className="flex items-center">
-                    <Link to="koszyk" className="text-2xl mr-10 btn btn-ghost hover:text-base-content text-black dark:text-white transition duration-500">
+                    <Link to="/koszyk" className="text-2xl mr-10 btn btn-ghost hover:text-base-content text-black dark:text-white transition duration-500">
                         Koszyk
                     </Link>
                     <button id="lightswitch" className="text-2xl mr-10 btn btn-square btn-ghost transition duration-500" onClick={toggleDarkMode}>
