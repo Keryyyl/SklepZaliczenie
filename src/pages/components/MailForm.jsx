@@ -107,9 +107,9 @@ function KursCard(props) {
                         </div>
 
                         <div className="card-actions justify-end mt-6">
-                            <button type="submit" className="btn btn-accent btn-lg w-full flex items-center justify-center gap-2">
-                                Submit
-                                <span className="material-icons"> check </span>
+                            <button type="submit" className="btn btn-accent btn-lg w-full flex items-center justify-center gap-2 text-white dark:text-black">
+                                Płatność
+                                <span className="material-icons-accent"> check </span>
                             </button>
                         </div>
                     </form>
