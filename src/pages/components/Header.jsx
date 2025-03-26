@@ -9,7 +9,6 @@ function Header() {
 
     useEffect(() => {
         if (darkMode) {
-            console.log("dark");
             document.documentElement.classList.add("dark");
             localStorage.setItem("theme", "dark");
             document.getElementById("lightswitch").classList.add("btn-ghost");
