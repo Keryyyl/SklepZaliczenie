@@ -86,5 +86,5 @@
   }
 
   #root {
-    @apply bg-white h-full;
+    @apply bg-slate-400 dark:bg-base-200 transition duration-2500;
   }
