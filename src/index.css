@@ -88,3 +88,13 @@
   #root {
     @apply bg-slate-400 dark:bg-base-200 transition duration-2500;
   }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}

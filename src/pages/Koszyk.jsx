@@ -8,7 +8,7 @@ function Koszyk() {
       <>
       <Header/>
       Koszyk
-      <KursCard title="Tytułek" description="Jakiś opis" price="20" />
+      {/* <KursCard title="Tytułek" description="Jakiś opis" price="20" /> */}
       <MailForm/>
       </>
     )
