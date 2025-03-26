@@ -84,3 +84,7 @@
     /* Support for IE. */
     font-feature-settings: 'liga';
   }
+
+  #root {
+    @apply bg-white h-full;
+  }

@@ -24,8 +24,8 @@ function KursCard(props) {
     };
 
     return (
-        <div className="min-h-screen bg-base-200 flex items-center justify-center p-6">
-            <div className="card w-full max-w-xl bg-base-100 shadow-2xl rounded-lg p-6">
+        <div className="min-h-screen bg-slate-400 dark:bg-base-200 flex items-center justify-center transition duration-2500 p-6">
+            <div className="card w-full max-w-xl bg-slate-200 dark:bg-base-100 shadow-2xl dark:shadow-xl shadow-gray-700 dark:shadow-gray-950 rounded-lg p-6 transition duration-2500">
                 <div className="card-body">
                     <h2 className="text-3xl font-bold text-center text-accent mb-6">Informacje Do Sprzedaży</h2>
                     
@@ -33,7 +33,7 @@ function KursCard(props) {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text font-semibold">Imie</span>
+                                    <span className="label-text text-accent font-semibold">Imie</span>
                                 </label>
                                 <input
                                     type="text"
@@ -41,14 +41,14 @@ function KursCard(props) {
                                     value={formData.name}
                                     onChange={handleChange}
                                     placeholder="Wpisz Swoje Imie"
-                                    className="input input-accent w-full text-accent"
+                                    className="input input-accent w-full text-accent shadow-2xl dark:shadow-black bg-white dark:bg-base-100 transition duration-2500"
                                     required
                                 />
                             </div>
 
                             <div className="form-control w-full">
                                 <label className="label">
-                                    <span className="label-text font-semibold">Nazwisko</span>
+                                    <span className="label-text text-accent font-semibold">Nazwisko</span>
                                 </label>
                                 <input
                                     type="text"
@@ -56,7 +56,7 @@ function KursCard(props) {
                                     value={formData.forename}
                                     onChange={handleChange}
                                     placeholder="Wpisz Swoje Nazwisko"
-                                    className="input input-accent w-full text-accent"
+                                    className="input input-accent w-full text-accent shadow-2xl dark:shadow-black bg-white dark:bg-base-100 transition duration-2500"
                                     required
                                 />
                             </div>
@@ -64,21 +64,21 @@ function KursCard(props) {
 
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text font-semibold">Adres</span>
+                                <span className="label-text text-accent font-semibold">Adres</span>
                             </label>
                             <textarea
                                 name="address"
                                 value={formData.address}
                                 onChange={handleChange}
                                 placeholder="Wpisz Swój Adres"
-                                className="textarea textarea-accent h-24 w-full text-accent"
+                                className="textarea textarea-accent h-24 w-full text-accent bg-white dark:bg-base-100 transition duration-2500"
                                 required
                             />
                         </div>
 
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text font-semibold">Email</span>
+                                <span className="label-text text-accent font-semibold">Email</span>
                             </label>
                             <input
                                 type="email"
@@ -86,14 +86,14 @@ function KursCard(props) {
                                 value={formData.email}
                                 onChange={handleChange}
                                 placeholder="Wpisz Swój Email"
-                                className="input input-accent w-full text-accent"
+                                className="input input-accent w-full text-accent shadow-2xl dark:shadow-black bg-white dark:bg-base-100 transition duration-2500"
                                 required
                             />
                         </div>
 
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text font-semibold">Telefon</span>
+                                <span className="label-text text-accent font-semibold">Telefon</span>
                             </label>
                             <input
                                 type="tel"
@@ -101,13 +101,13 @@ function KursCard(props) {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 placeholder="Wpisz Swój Numer Telefonu"
-                                className="input input-accent w-full text-accent"
+                                className="input input-accent w-full text-accent shadow-2xl dark:shadow-black bg-white dark:bg-base-100 transition duration-2500"
                                 required
                             />
                         </div>
 
                         <div className="card-actions justify-end mt-6">
-                            <button type="submit" className="btn btn-accent btn-lg w-full flex items-center justify-center gap-2 text-white dark:text-black">
+                            <button type="submit" className="btn btn-accent btn-lg w-full flex items-center justify-center shadow-2xl dark:shadow-black gap-2 text-white transition duration-2500 dark:text-black">
                                 Płatność
                                 <span className="material-icons-accent"> check </span>
                             </button>
