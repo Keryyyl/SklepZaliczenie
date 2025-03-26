@@ -8,7 +8,8 @@ function Koszyk() {
       <>
       <Header/>
       Koszyk
-      {/* <KursCard title="Tytułek" description="Jakiś opis" price="20" /> */}
+      <KursCard title="Kurs React" description="Kompleksowy kurs React od podstaw." prices={{ Temporary: 15, Forever: 25, Download: 35 }} 
+/>
       <MailForm/>
       </>
     )
