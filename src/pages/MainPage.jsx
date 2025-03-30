@@ -30,17 +30,18 @@ function MainPage() {
   return (
     <>
       <Header />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-        {courses.map((course) => (
-          <KursCard
-            key={course.id}
-            title={course.title}
-            description={course.description}
-            prices={course.prices}
-            onAdd={(item) => console.log("Added:", item)}
-          />
-        ))}
-      </div>
+      <div className="flex flex-wrap justify-center  gap-6 p-6 mt-20 mb-20 bg-slate-400 dark:bg-base-100 w-full transition duration-2500">
+  {courses.map((course) => (
+    <div key={course.id} className="flex w-full sm:w-[90%] md:w-[45%] lg:w-[30%]">
+      <KursCard
+        title={course.title}
+        description={course.description}
+        prices={course.prices}
+        onAdd={(item) => console.log("Added:", item)}
+      />
+    </div>
+  ))}
+</div>
     </>
   );
 }
