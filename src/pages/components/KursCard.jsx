@@ -1,8 +1,20 @@
 import { useState } from "react";
+import { useCart } from "../../context/CartContext";
 
-function KursCard({ title, description, prices, onAdd }) {
+function KursCard({ title, description, prices }) {
+  const { addToCart } = useCart();
   const [selectedOption, setSelectedOption] = useState("Temporary");
   const [isAdditional, setIsAdditional] = useState(false);
+
+  const handleAdd = () => {
+    const item = {
+      title,
+      selectedOption,
+      price: prices[selectedOption],
+      isAdditional,
+    };
+    addToCart(item); // Add item to cart
+  };
 
   return (
     <div className="card dark:bg-gray-800 bg-slate-300 shadow-xl shadow-gray-700 dark:shadow-gray-900 rounded-lg text-accent w-100 transition duration-2500 p-4">
@@ -31,7 +43,7 @@ function KursCard({ title, description, prices, onAdd }) {
             </select>
             <button 
               className="btn btn-accent transition duration-2500 flex-1 shadow-2xl dark:shadow-black gap-2 text-white dark:text-black"
-              onClick={() => onAdd({ title, selectedOption, price: prices[selectedOption], isAdditional })}
+              onClick={handleAdd}
             >
               Dodaj 
               <span className="material-icons-accent"> check </span>
