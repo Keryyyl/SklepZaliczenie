@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function KursCard({ title, description, prices }) {
+function KursCard({ title, description, prices, onAdd }) {
   const [selectedOption, setSelectedOption] = useState("Temporary");
 
   return (
@@ -19,7 +19,8 @@ function KursCard({ title, description, prices }) {
               <option value="Forever">Forever - {prices.Forever} zł</option>
               <option value="Download">Download - {prices.Download} zł</option>
             </select>
-            <button className="btn btn-accent transition duration-2500 flex-1 shadow-2xl dark:shadow-black gap-2 text-white dark:text-black">
+            <button className="btn btn-accent transition duration-2500 flex-1 shadow-2xl dark:shadow-black gap-2 text-white dark:text-black"
+            onClick={() => onAdd({id, title, selectedOption, price: prices[selectedOption]})}>
             Dodaj 
             <span className="material-icons-accent"> check </span>
             </button>
