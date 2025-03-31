@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import { useCart } from "../context/CartContext"; 
 import { useState, useEffect } from "react";
+import MailForm from "./components/MailForm";
 
 function Koszyk() {
   const { cart, removeFromCart } = useCart(); 
@@ -19,7 +20,7 @@ function Koszyk() {
       <div className="w-full mt-30">
         <p className="text-center text-2xl">Łączna Cena: {wholePrice} zł</p>
       </div>
-      <div className="overflow-x-auto whitespace-nowrap mt-10 bg-base-100 px-6 py-4">
+      <div className="overflow-x-auto whitespace-nowrap mt-10 mb-0 bg-base-100 px-6 py-4">
         <div className="flex space-x-6">
           {cart.length === 0 ? (
             <p className="text-center text-lg">Brak dodanych kursów.</p>
@@ -29,7 +30,7 @@ function Koszyk() {
                 key={index}
                 className="bg-gray-200 dark:bg-gray-800 p-4 rounded-lg shadow-md w-80 h-50 flex-none" 
               >
-                <h2 className="text-xl font-semibold">{item.title}</h2>
+                <h2 className="text-xl font-semibold">{item.id}</h2>
                 <p>Opcja: {item.selectedOption}</p>
                 <p>Cena: {item.price} zł</p>
                 {item.isAdditional && (
@@ -46,6 +47,7 @@ function Koszyk() {
           )}
         </div>
       </div>
+      <MailForm />
     </>
   );
 }
