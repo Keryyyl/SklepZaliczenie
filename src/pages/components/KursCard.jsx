@@ -7,11 +7,14 @@ function KursCard({ title, description, prices }) {
   const [isAdditional, setIsAdditional] = useState(false);
 
   const handleAdd = () => {
+    const additionalPrice = isAdditional ? prices.Additional : 0; 
     const item = {
-      title,
+      id: title, // Use the course ID from props (assuming `title` isn't the ID here, so you might want to use the correct field)
       selectedOption,
       price: prices[selectedOption],
+      additionalPrice: isAdditional ? prices.Additional : 0,
       isAdditional,
+      CoursePrice: prices[selectedOption] + additionalPrice
     };
     addToCart(item); // Add item to cart
   };
