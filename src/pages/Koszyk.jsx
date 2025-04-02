@@ -17,18 +17,25 @@ function Koszyk() {
   return (
     <>
       <Header />
-      <div className="w-full mt-30">
-        <p className="text-center text-2xl">Łączna Cena: {wholePrice} zł</p>
+      <div className="w-full mt-10 text-center">
+        <p className="text-2xl text-accent">Łączna Cena: {wholePrice} zł</p>
       </div>
-      <div className="overflow-x-auto whitespace-nowrap mt-10 mb-0 bg-base-100 px-6 py-4">
-        <div className="flex space-x-6">
+      
+      <div className="flex justify-center items-start gap-10 px-6 py-4 mt-10 min-h-[80vh]">
+        {/* Adjusted to align MailForm to the top */}
+        <div className="flex justify-center items-start w-1/3 self-start">
+          <MailForm />
+        </div>
+
+        {/* Right Side: Cart Items aligned to the top of MailForm */}
+        <div className="flex flex-col space-y-6 mt-5 overflow-y-auto max-h-[620px] w-80 self-start scrollhid rounded-2xl">
           {cart.length === 0 ? (
-            <p className="text-center text-lg">Brak dodanych kursów.</p>
+            <p className="text-lg text-center">Brak dodanych kursów.</p>
           ) : (
             cart.map((item, index) => (
               <div
                 key={index}
-                className="bg-gray-200 dark:bg-gray-800 p-4 rounded-lg shadow-md w-80 h-50 flex-none" 
+                className="bg-gray-200 dark:bg-gray-800 p-4 rounded-lg shadow-md w-full" 
               >
                 <h2 className="text-xl font-semibold">{item.id}</h2>
                 <p>Opcja: {item.selectedOption}</p>
@@ -47,7 +54,6 @@ function Koszyk() {
           )}
         </div>
       </div>
-      <MailForm />
     </>
   );
 }

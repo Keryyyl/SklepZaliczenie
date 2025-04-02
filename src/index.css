@@ -85,6 +85,14 @@
     font-feature-settings: 'liga';
   }
 
+.scrollhid {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.scrollhid::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
   #root, body, html {
     @apply bg-slate-400 dark:bg-base-100 transition duration-2500;
   }

@@ -24,7 +24,7 @@ function MailForm() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-400 dark:bg-base-100 flex items-center justify-center transition duration-2500 mt-0 p-6">
+        <div className=" bg-slate-400 dark:bg-base-100 flex items-center justify-center transition duration-2500 mt-0 p-6">
             <div className="card w-full max-w-xl bg-slate-200 dark:bg-base-100 shadow-2xl dark:shadow-xl shadow-gray-700 dark:shadow-gray-950 rounded-lg p-6 transition duration-2500">
                 <div className="card-body">
                     <h2 className="text-3xl font-bold text-center text-accent mb-6">Informacje Do Sprzedaży</h2>
