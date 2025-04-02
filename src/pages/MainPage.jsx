@@ -41,21 +41,22 @@ function MainPage() {
   return (
     <>
       <Header />
+    <div className="w-[80%] mx-auto">
       <div className="mt-25 text-center bg-slate-400 dark:bg-base-100 transition duration-2500">
       <p className="text-accent font-extrabold text-2xl">{totalPrice !== 0 ? `Łączna Cena: ${totalPrice} zł` : "Nie wybrano jeszcze żadnych kursów"}</p>
       </div>
-      <div className="flex flex-wrap justify-center gap-6 p-6 mt-20 mb-20 bg-slate-400 dark:bg-base-100 w-full transition duration-2500">
-        {courses.map((course) => (
-          <div key={course.id} className="flex w-full sm:w-[90%] md:w-[45%] lg:w-[30%]">
-            <KursCard
-              title={course.title}
-              description={course.description}
-              prices={course.prices}
-              onAdd={handleAddCourse}
-            />
-          </div>
-        ))}
-      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-y-6 p-4 mt-20 mb-20 bg-slate-400 dark:bg-base-100 w-full transition duration-2500 place-items-center">
+  {courses.map((course) => (
+    <KursCard
+      key={course.id}
+      title={course.title}
+      description={course.description}
+      prices={course.prices}
+      onAdd={handleAddCourse}
+    />
+  ))}
+</div>
+    </div>
     </>
   );
 }
