@@ -41,7 +41,7 @@ function MainPage() {
   return (
     <>
       <Header />
-      <div className="mt-25 text-center">
+      <div className="mt-25 text-center bg-slate-400 dark:bg-base-100 transition duration-2500">
       <p className="text-accent font-extrabold text-2xl">{totalPrice !== 0 ? `Łączna Cena: ${totalPrice} zł` : "Nie wybrano jeszcze żadnych kursów"}</p>
       </div>
       <div className="flex flex-wrap justify-center gap-6 p-6 mt-20 mb-20 bg-slate-400 dark:bg-base-100 w-full transition duration-2500">
