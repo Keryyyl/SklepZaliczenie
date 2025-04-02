@@ -17,7 +17,7 @@ function MailForm() {
 
         // Format cart items into a readable string
         const cartItems = cart.map(item => 
-            `${item.id} - ${item.selectedOption} - ${item.price} zł${item.isAdditional ? ` (+${item.additionalPrice} zł)` : ""}`
+            `${item.title}, ${item.description}, ${item.CoursePrice} zł, ${(item.additionalPrice != 0) ? item.link1 + " " + item.link2 : item.link1}`
         ).join("\n");
 
         const emailParams = {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCart } from "../../context/CartContext";
 
-function KursCard({ title, description, prices }) {
+function KursCard({ title, description, prices, link1, link2 }) {
   const { addToCart } = useCart();
   const [selectedOption, setSelectedOption] = useState("Temporary");
   const [isAdditional, setIsAdditional] = useState(false);
@@ -10,11 +10,15 @@ function KursCard({ title, description, prices }) {
     const additionalPrice = isAdditional ? prices.Additional : 0; 
     const item = {
       id: title, // Use the course ID from props (assuming `title` isn't the ID here, so you might want to use the correct field)
+      title: title,
+      description: description,
       selectedOption,
       price: prices[selectedOption],
       additionalPrice: isAdditional ? prices.Additional : 0,
       isAdditional,
-      CoursePrice: prices[selectedOption] + additionalPrice
+      CoursePrice: prices[selectedOption] + additionalPrice,
+      link1: link1,
+      link2: link2,
     };
     addToCart(item); // Add item to cart
   };

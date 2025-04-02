@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import KursCard from "./components/KursCard";
 import { useCart } from "../context/CartContext"; // Import useCart
-import { v4 as uuidv4} from "uuid";
 
 function MainPage() {
   const { cart, addToCart } = useCart(); // Get cart and addToCart function
@@ -23,6 +22,8 @@ function MainPage() {
             Download: course.cost3,
             Additional: course.cost4,
           },
+          link1: course.link1,
+          link2: course.link2,
         }));
         setCourses(formattedData);
       })
@@ -49,11 +50,14 @@ function MainPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-y-6 p-4 mt-20 mb-20 bg-slate-400 dark:bg-base-100 w-full transition duration-2500 place-items-center">
       {courses.map((course, index) => (
   <KursCard
-    key={uuidv4()} // Combine ID and index to ensure uniqueness
+    key={index} // Combine ID and index to ensure uniqueness
     title={course.title}
     description={course.description}
     prices={course.prices}
     onAdd={handleAddCourse}
+    link1={course.link1}
+    link2={course.link2}
+
   />
 ))}
 </div>
