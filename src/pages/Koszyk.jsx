@@ -33,22 +33,12 @@ function Koszyk() {
             <p className="text-3xl text-center text-accent">Brak wybranych kursów.</p>
           ) : (
             cart.map((item, index) => (
-              <div
-                key={index}
-                className="bg-gray-200 dark:bg-gray-800 p-4 rounded-lg shadow-xs shadow-gray-200 dark:shadow-black w-full transition duration-2500" 
-              >
+              <div key={index} className="bg-gray-200 dark:bg-gray-800 p-4 rounded-lg shadow-xs">
                 <h2 className="text-xl font-semibold text-accent">{item.id}</h2>
                 <p className="text-accent">Opcja: {item.selectedOption}</p>
                 <p className="text-accent">Cena: {item.price} zł</p>
-                {item.isAdditional && (
-                  <p className="text-accent">+ Dodatkowe pliki: {item.additionalPrice} zł</p>
-                )}
-                <button
-                  className="btn btn-accent text-white dark:text-black btn-md w-full text-xl flex items-center justify-center mt-5 shadow-2xl dark:shadow-black gap-2 transition duration-2500"
-                  onClick={() => removeFromCart(index)} 
-                >
-                  Usuń <span class="material-icons-accent"> close </span>
-                </button>
+                {item.isAdditional && <p className="text-accent">+ Dodatkowe pliki: {item.additionalPrice} zł</p>}
+              <button onClick={() => removeFromCart(index)} className="btn btn-accent w-full">Usuń <span className="material-icons-accent"> close </span></button>
               </div>
             ))
           )}
