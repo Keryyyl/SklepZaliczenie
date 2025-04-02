@@ -17,8 +17,8 @@ function Koszyk() {
   return (
     <>
       <Header />
-      <div className="w-full mt-10 text-center">
-        <p className="text-2xl text-accent">Łączna Cena: {wholePrice} zł</p>
+      <div className="w-full mt-30 text-center">
+        <p className="text-2xl font-bold text-accent">Łączna Cena: {wholePrice} zł</p>
       </div>
       
       <div className="flex justify-center items-start gap-10 px-6 py-4 mt-10 min-h-[80vh]">
@@ -35,19 +35,19 @@ function Koszyk() {
             cart.map((item, index) => (
               <div
                 key={index}
-                className="bg-gray-200 dark:bg-gray-800 p-4 rounded-lg shadow-md w-full" 
+                className="bg-gray-200 dark:bg-gray-800 p-4 rounded-lg shadow-xs shadow-gray-200 dark:shadow-black w-full transition duration-2500" 
               >
-                <h2 className="text-xl font-semibold">{item.id}</h2>
-                <p>Opcja: {item.selectedOption}</p>
-                <p>Cena: {item.price} zł</p>
+                <h2 className="text-xl font-semibold text-accent">{item.id}</h2>
+                <p className="text-accent">Opcja: {item.selectedOption}</p>
+                <p className="text-accent">Cena: {item.price} zł</p>
                 {item.isAdditional && (
-                  <p>+ Dodatkowe pliki: {item.additionalPrice} zł</p>
+                  <p className="text-accent">+ Dodatkowe pliki: {item.additionalPrice} zł</p>
                 )}
                 <button
-                  className="btn btn-soft btn-accent text-accent hover:text-black dark:hover:text-white btn-md w-full text-xl flex items-center justify-center mt-5 shadow-2xl dark:shadow-black gap-2 transition duration-2500"
+                  className="btn btn-accent text-white dark:text-black btn-md w-full text-xl flex items-center justify-center mt-5 shadow-2xl dark:shadow-black gap-2 transition duration-2500"
                   onClick={() => removeFromCart(index)} 
                 >
-                  Usuń
+                  Usuń <span class="material-icons-accent"> close </span>
                 </button>
               </div>
             ))
