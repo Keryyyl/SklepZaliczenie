@@ -30,7 +30,7 @@ function Koszyk() {
         {/* Right Side: Cart Items aligned to the top of MailForm */}
         <div className="flex flex-col space-y-6 mt-5 overflow-y-auto max-h-[620px] w-80 self-start scrollhid rounded-2xl">
           {cart.length === 0 ? (
-            <p className="text-lg text-center">Brak dodanych kursów.</p>
+            <p className="text-3xl text-center text-accent">Brak wybranych kursów.</p>
           ) : (
             cart.map((item, index) => (
               <div
