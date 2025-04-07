@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import KursCard from "./components/KursCard";
-import { useCart } from "../context/CartContext"; // Import useCart
+import { useCart } from "../context/CartContext"; 
 
 function MainPage() {
-  const { cart, addToCart } = useCart(); // Get cart and addToCart function
+  const { cart, addToCart } = useCart(); 
 
   const [courses, setCourses] = useState([]);
 
@@ -13,7 +13,7 @@ function MainPage() {
       .then((response) => response.json())
       .then((data) => {
         const formattedData = data.map((course, index) => ({
-          id: index, // Fallback to index if id is missing
+          id: index, 
           title: course.name,
           description: course.desc,
           prices: {
@@ -30,14 +30,13 @@ function MainPage() {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  // Calculate total price from the cart
   const totalPrice = cart.reduce(
     (acc, item) => acc + (item.price || 0) + (item.additionalPrice || 0),
     0
   );
 
   const handleAddCourse = (item) => {
-    addToCart(item); // Add item to global cart
+    addToCart(item); 
   };
 
   return (
@@ -50,7 +49,7 @@ function MainPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-y-6 p-4 mt-20 mb-20 bg-slate-400 dark:bg-base-100 w-full transition duration-2500 place-items-center">
       {courses.map((course, index) => (
   <KursCard
-    key={index} // Combine ID and index to ensure uniqueness
+    key={index} 
     title={course.title}
     description={course.description}
     prices={course.prices}

@@ -9,7 +9,7 @@ function KursCard({ title, description, prices, link1, link2 }) {
   const handleAdd = () => {
     const additionalPrice = isAdditional ? prices.Additional : 0; 
     const item = {
-      id: title, // Use the course ID from props (assuming `title` isn't the ID here, so you might want to use the correct field)
+      id: title, 
       title: title,
       description: description,
       selectedOption,
@@ -20,7 +20,7 @@ function KursCard({ title, description, prices, link1, link2 }) {
       link1: link1,
       link2: link2,
     };
-    addToCart(item); // Add item to cart
+    addToCart(item); 
   };
 
   return (

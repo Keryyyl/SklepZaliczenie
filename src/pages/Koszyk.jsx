@@ -22,12 +22,10 @@ function Koszyk() {
       </div>
       
       <div className="flex justify-center items-start gap-10 px-6 py-4 mt-10 min-h-[80vh]">
-        {/* Adjusted to align MailForm to the top */}
         <div className="flex justify-center items-start w-1/3 self-start">
           <MailForm />
         </div>
 
-        {/* Right Side: Cart Items aligned to the top of MailForm */}
         <div className="flex flex-col space-y-6 mt-5 overflow-y-auto max-h-[620px] w-80 self-start scrollhid rounded-2xl">
           {cart.length === 0 ? (
             <p className="text-3xl text-center text-accent">Brak wybranych kursów.</p>

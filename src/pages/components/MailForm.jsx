@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { useCart } from "../../context/CartContext"; // Import Cart Context
+import { useCart } from "../../context/CartContext"; 
 
 function MailForm() {
-    const { cart } = useCart(); // Get cart items
+    const { cart } = useCart(); 
     const [formData, setFormData] = useState({
         name: "",
         forename: "",
@@ -15,7 +15,6 @@ function MailForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Format cart items into a readable string
         const cartItems = cart.map(item => 
             `${item.title}, ${item.description}, ${item.CoursePrice} zł, ${(item.additionalPrice != 0) ? item.link1 + " " + item.link2 : item.link1}`
         ).join("\n");
@@ -26,14 +25,14 @@ function MailForm() {
             address: formData.address,
             email: formData.email,
             phone: formData.phone,
-            cartItems: cartItems || "Brak wybranych kursów.", // Fallback if empty
+            cartItems: cartItems || "Brak wybranych kursów.", 
         };
 
         emailjs.send(
-            "service_a6aytde", // Replace with your EmailJS Service ID
-            "template_m1bedtc", // Replace with your EmailJS Template ID
+            "service_a6aytde", 
+            "template_m1bedtc", 
             emailParams,
-            "VAecmVeHz75tuZhet" // Replace with your EmailJS Public Key
+            "VAecmVeHz75tuZhet" 
         )
         .then((response) => {
             console.log("SUCCESS!", response.status, response.text);
